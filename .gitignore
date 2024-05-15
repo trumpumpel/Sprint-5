@@ -260,13 +260,13 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-!/tests/test_enter_by_personal_account.py
+!/tests/conft.py
 !/tests/test_enter_by_form_registration.py
 !/tests/test_enter_by_forgot_password_page.py
 !/tests/test_enter_by_button_at_main.py
 !/tests/test_click_to_stellar_burgers.py
 !/venv/
 !/.idea/
-!/tests/test_transition_to__sauces.py
-!/tests/test_transition_to_bread.py
-!/tests/test_transition_to_filling.py
+!/tests/test.py
+!/tests/confy.py
+!/tests/test_constructor.py
