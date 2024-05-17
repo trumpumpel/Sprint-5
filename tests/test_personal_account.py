@@ -1,9 +1,7 @@
-from selenium.webdriver.common.by import By
 from conftest import driver, login
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import LocatorsLand
-import time
 
 
 class TestPersonalAccount:

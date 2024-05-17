@@ -2,9 +2,8 @@ from conftest import driver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from locators import LocatorsLand
-from data import r_name, r_email, r_password, URL
-
-from selenium.webdriver.common.by import By
+from data import URL
+from helpers import r_name, r_email, r_password
 
 
 class TestRegistrationPage:

@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from conftest import driver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
