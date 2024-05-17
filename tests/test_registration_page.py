@@ -25,7 +25,7 @@ class TestRegistrationPage:
         reg_button.click()
 
         WebDriverWait(driver, 15).until(
-            expected_conditions.visibility_of_element_located((By.XPATH, "//h2[text()= 'Вход']")))
+            expected_conditions.visibility_of_element_located(*LocatorsLand.ENTER_HEADING))
 
         actual_result = driver.find_element(*LocatorsLand.ENTER_HEADING)
         assert actual_result.text == 'Вход'
@@ -46,7 +46,7 @@ class TestRegistrationPage:
         reg_button.click()
 
         WebDriverWait(driver, 15).until(expected_conditions.visibility_of_element_located(
-            (By.XPATH, "//p[contains(@class, 'input__error text_type_main-default')]")))
+            *LocatorsLand.EXISTS_PASSWORD))
 
         actual_result = driver.find_element(*LocatorsLand.EXISTS_PASSWORD)
         assert actual_result.text == 'Такой пользователь уже существует'
@@ -86,7 +86,7 @@ class TestRegistrationPage:
 
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//p[contains(@class, 'input__error text_type_main-default')]")))
+                *LocatorsLand.INVALID_PASSWORD))
 
         actual_result = driver.find_element(*LocatorsLand.INVALID_PASSWORD)
         assert actual_result.text == 'Некорректный пароль'

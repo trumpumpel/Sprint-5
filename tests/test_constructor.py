@@ -9,13 +9,13 @@ class TestConstructor:
     def test_click_to_bread(self, driver):
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//span[contains(text(), 'Начинки')]/parent::div")))
+                *LocatorsLand.FILLING))
         filling_element = driver.find_element(*LocatorsLand.FILLING)
         filling_element.click()
 
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//span[contains(text(), 'Булки')]/parent::div")))
+                *LocatorsLand.BREAD))
 
         bread_element = driver.find_element(*LocatorsLand.BREAD)
         bread_element.click()
@@ -25,7 +25,7 @@ class TestConstructor:
     def test_click_to_sauces(self, driver):
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//span[contains(text(), 'Соусы')]/parent::div")))
+                *LocatorsLand.SAUCES))
 
         sauces_element = driver.find_element(*LocatorsLand.SAUCES)
         sauces_element.click()
@@ -35,7 +35,7 @@ class TestConstructor:
     def test_click_to_filling(self, driver):
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                (By.XPATH, "//span[contains(text(), 'Начинки')]/parent::div")))
+                *LocatorsLand.FILLING))
 
         filling_element = driver.find_element(*LocatorsLand.FILLING)
         filling_element.click()

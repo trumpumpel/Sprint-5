@@ -34,7 +34,7 @@ def login(driver):
     password_element = driver.find_element(*LocatorsLand.PASSWORD_REG)
     password_element.send_keys(cor_password)
 
-    WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable((By.XPATH, "//button[text()='Войти']")))
+    WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(*LocatorsLand.ENTER))
 
     enter_button = driver.find_element(*LocatorsLand.ENTER)
     enter_button.click()
