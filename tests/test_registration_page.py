@@ -9,7 +9,7 @@ from helpers import r_name, r_email, r_password
 class TestRegistrationPage:
 
     def test_register(self, driver):
-        driver.get(f'{URL}register')
+        driver.get(f'{URL}/register')
 
         name_element = driver.find_element(*LocatorsLand.NAME_REG)
         name_element.send_keys(r_name)
@@ -24,13 +24,13 @@ class TestRegistrationPage:
         reg_button.click()
 
         WebDriverWait(driver, 15).until(
-            expected_conditions.visibility_of_element_located(*LocatorsLand.ENTER_HEADING))
+            expected_conditions.visibility_of_element_located(LocatorsLand.ENTER_HEADING))
 
         actual_result = driver.find_element(*LocatorsLand.ENTER_HEADING)
         assert actual_result.text == 'Вход'
 
     def test_register_wrong_password(self, driver):
-        driver.get(f'{URL}register')
+        driver.get(f'{URL}/register')
 
         name_element = driver.find_element(*LocatorsLand.NAME_REG)
         name_element.send_keys('Zoeman')
@@ -45,13 +45,13 @@ class TestRegistrationPage:
         reg_button.click()
 
         WebDriverWait(driver, 15).until(expected_conditions.visibility_of_element_located(
-            *LocatorsLand.EXISTS_PASSWORD))
+            LocatorsLand.EXISTS_PASSWORD))
 
         actual_result = driver.find_element(*LocatorsLand.EXISTS_PASSWORD)
         assert actual_result.text == 'Такой пользователь уже существует'
 
     def test_register_wrong_name(self, driver):
-        driver.get(f'{URL}register')
+        driver.get(f'{URL}/register')
 
         name_element = driver.find_element(*LocatorsLand.NAME_REG)
         name_element.send_keys('')
@@ -66,10 +66,10 @@ class TestRegistrationPage:
         reg_button.click()
 
         current_url = driver.current_url
-        assert driver.current_url == f'{URL}register'
+        assert driver.current_url == f'{URL}/register'
 
     def test_register_invalid_password(self, driver):
-        driver.get(f'{URL}register')
+        driver.get(f'{URL}/register')
 
         name_element = driver.find_element(*LocatorsLand.NAME_REG)
         name_element.send_keys('Zoeman')
@@ -85,7 +85,7 @@ class TestRegistrationPage:
 
         WebDriverWait(driver, 15).until(
             expected_conditions.visibility_of_element_located(
-                *LocatorsLand.INVALID_PASSWORD))
+                LocatorsLand.INVALID_PASSWORD))
 
         actual_result = driver.find_element(*LocatorsLand.INVALID_PASSWORD)
         assert actual_result.text == 'Некорректный пароль'

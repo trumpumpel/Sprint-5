@@ -25,7 +25,7 @@ def driver():
 
 @pytest.fixture
 def login(driver):
-    driver.get(f'{URL}account')
+    driver.get(f'{URL}/account')
 
     email_element = driver.find_element(*LocatorsLand.EMAIL_REG)
     email_element.send_keys(cor_email)
@@ -33,10 +33,10 @@ def login(driver):
     password_element = driver.find_element(*LocatorsLand.PASSWORD_REG)
     password_element.send_keys(cor_password)
 
-    WebDriverWait(driver, 10).until(expected_conditions.element_to_be_clickable(*LocatorsLand.ENTER))
+    WebDriverWait(driver, 15).until(expected_conditions.element_to_be_clickable(LocatorsLand.ENTER))
 
     enter_button = driver.find_element(*LocatorsLand.ENTER)
     enter_button.click()
 
-    pa_button = driver.find_element(*LocatorsLand.ENTER)
+    pa_button = driver.find_element(*LocatorsLand.PERSONAL_ACCOUNT)
     pa_button.click()
