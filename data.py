@@ -1,0 +1,5 @@
+cor_name = 'Zemdan'
+cor_email = '1234@ya.com'
+cor_password = '123ddd'
+un_password = '1'
+URL = 'https://stellarburgers.nomoreparties.site'
